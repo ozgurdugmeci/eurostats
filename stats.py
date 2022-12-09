@@ -1,3 +1,4 @@
+import streamlit.components.v1 as components
 import streamlit as st
 import requests
 from bs4 import BeautifulSoup
@@ -1121,7 +1122,29 @@ except:
  'Please check your connection and refresh the link.'	
    
    
-   
+takip= """
+<!-- Default Statcounter code for euro_stats
+https://euroleaguestats.streamlit.app/ -->
+<script type="text/javascript">
+var sc_project=12825092; 
+var sc_invisible=1; 
+var sc_security="190e10f1"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="web counter"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12825092/0/190e10f1/1/"
+alt="web counter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+
+"""
+#st.markdown(takip, unsafe_allow_html=True)  
+components.html(takip,width=200, height=200)   
    
    
    
