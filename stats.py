@@ -223,9 +223,15 @@ try:
  #df_away.loc[(df_away['code']=='010588'), 'dorsal'] = '790'
  
  
- df_home_ilk5= df_home.loc[df_home['startFive']==True]
- df_away_ilk5= df_away.loc[df_away['startFive']==True]
+ df_home_ilk5= df_home.loc[df_home['startFive']==True].copy()
+ df_away_ilk5= df_away.loc[df_away['startFive']==True].copy()
  
+ if len(df_home_ilk5)!=5 or len(df_away_ilk5)!=5:
+  st.write('Strating five data is problematic. Source has errors.')
+  st.write('You can look for another game')
+  st.stop()
+ 
+
  
  df_home_ilk5=df_home_ilk5[['jerseyName','dorsal','positionName','imageUrls.headshot']] 
  df_home_ilk5.columns = ['jerseyName','playerDorsal','positionName','imageUrls.headshot']
