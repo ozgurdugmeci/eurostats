@@ -9,7 +9,7 @@ import json
 
 #------------------------------------------------
 try: 
- 
+ counter=0
  linko='https://www.euroleaguebasketball.net//euroleague/teams//'
  #1
  #klüp bilgilerini al 
@@ -959,26 +959,27 @@ try:
      score_neg_away=0
  	 
   elif slice[1].strip() in ['EG'] :
+   if counter==0:
+    counter=counter+1
+    #sub_counter_home
+    #df_home_ilk5['markerTime']= 'Last'
+    #df_home_ilk5['Ceyrek']= slice[16]
+    df_home_ilk5['Sure']= time_home
+    df_home_ilk5['Dif2']=score_home-score_away
+    df_home_ilk5['Score2'] = str(score_home)+ '-' + str(score_away)
+    df_home_ilk5['Top_Puan']= df_home_ilk5['Top_Puan']- df_home_ilk5['Score-']
+    container_final_home=container_final_home.append(df_home_ilk5)  
+    #st.dataframe(df_home_ilk5)
    
-   #sub_counter_home
-   #df_home_ilk5['markerTime']= 'Last'
-   #df_home_ilk5['Ceyrek']= slice[16]
-   df_home_ilk5['Sure']= time_home
-   df_home_ilk5['Dif2']=score_home-score_away
-   df_home_ilk5['Score2'] = str(score_home)+ '-' + str(score_away)
-   df_home_ilk5['Top_Puan']= df_home_ilk5['Top_Puan']- df_home_ilk5['Score-']
-   container_final_home=container_final_home.append(df_home_ilk5)  
-   #st.dataframe(df_home_ilk5)
-   
-   #sub_counter_away
-   #df_away_ilk5['markerTime']= 'Last'
-   #df_away_ilk5['Ceyrek']= slice[16]
-   df_away_ilk5['Sure']= time_away
-   df_away_ilk5['Dif2']=score_away-score_home
-   df_away_ilk5['Score2'] = str(score_home)+ '-' + str(score_away)
-   df_away_ilk5['Top_Puan']= df_away_ilk5['Top_Puan']- df_away_ilk5['Score-']
-   container_final_away=container_final_away.append(df_away_ilk5)  
-   #st.dataframe(df_away_ilk5)
+    #sub_counter_away
+    #df_away_ilk5['markerTime']= 'Last'
+    #df_away_ilk5['Ceyrek']= slice[16]
+    df_away_ilk5['Sure']= time_away
+    df_away_ilk5['Dif2']=score_away-score_home
+    df_away_ilk5['Score2'] = str(score_home)+ '-' + str(score_away)
+    df_away_ilk5['Top_Puan']= df_away_ilk5['Top_Puan']- df_away_ilk5['Score-']
+    container_final_away=container_final_away.append(df_away_ilk5)  
+    #st.dataframe(df_away_ilk5)
    
  resm=df_clubs.loc[df_clubs['code']==home].copy()
  resm=resm['crest'].values.tolist()
