@@ -36,7 +36,7 @@ try:
   euro_img='https://media-cdn.incrowdsports.com/23610a1b-1c2e-4d2a-8fe4-ac2f8e400632.svg'
   st.image(euro_img,width=90)
   
-  kol1,kol2,kol3,kol4,kol5,kol6,kol7,kol8,kol9 = st.columns(9)
+  #kol1,kol2,kol3,kol4,kol5,kol6,kol7,kol8,kol9 = st.columns(9)
   
   #tasarım1
   
@@ -74,8 +74,8 @@ try:
   #with kol9:
   # st.image(klup_list[17],width=30)
   # st.image(klup_list[14],width=30)
- #except:
- # pass 
+ except:
+  pass 
  #st.title('Productive Five')
  ' '
  ' ' 
