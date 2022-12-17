@@ -41,41 +41,41 @@ try:
   #tasarım1
   
   klup_list=df_clubs['crest'].values.tolist()
-  with kol1:
-   st.image(klup_list[0],width=30) 
-   st.image(klup_list[1],width=30)
+  #with kol1:
+  # st.image(klup_list[0],width=30) 
+  # st.image(klup_list[1],width=30)
     
-  with kol2:
-   st.image(klup_list[3],width=30) 
-   st.image(klup_list[4],width=30)
+  #with kol2:
+  # st.image(klup_list[3],width=30) 
+  # st.image(klup_list[4],width=30)
    
-  with kol3:
-   st.image(klup_list[6],width=30) 
-   st.image(klup_list[7],width=30)
+  #with kol3:
+  # st.image(klup_list[6],width=30) 
+  # st.image(klup_list[7],width=30)
    
-  with kol4:
-   st.image(klup_list[9],width=30) 
-   st.image(klup_list[10],width=30)
+  #with kol4:
+  # st.image(klup_list[9],width=30) 
+  # st.image(klup_list[10],width=30)
    
-  with kol5:
-   st.image(klup_list[12],width=30) 
-   st.image(klup_list[13],width=30)
+  #with kol5:
+  # st.image(klup_list[12],width=30) 
+  # st.image(klup_list[13],width=30)
    
-  with kol6:
-   st.image(klup_list[15],width=30) 
-   st.image(klup_list[16],width=30)
+  #with kol6:
+  # st.image(klup_list[15],width=30) 
+  # st.image(klup_list[16],width=30)
   
-  with kol7:
-   st.image(klup_list[2],width=30)
-   st.image(klup_list[5],width=30)
-  with kol8:
-   st.image(klup_list[8],width=30)
-   st.image(klup_list[11],width=30)
-  with kol9:
-   st.image(klup_list[17],width=30)
-   st.image(klup_list[14],width=30)
- except:
-  pass 
+  #with kol7:
+  # st.image(klup_list[2],width=30)
+  # st.image(klup_list[5],width=30)
+  #with kol8:
+  # st.image(klup_list[8],width=30)
+  # st.image(klup_list[11],width=30)
+  #with kol9:
+  # st.image(klup_list[17],width=30)
+  # st.image(klup_list[14],width=30)
+ #except:
+ # pass 
  #st.title('Productive Five')
  ' '
  ' ' 
