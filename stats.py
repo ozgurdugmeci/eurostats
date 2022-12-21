@@ -981,13 +981,29 @@ try:
     container_final_away=container_final_away.append(df_away_ilk5)  
     #st.dataframe(df_away_ilk5)
    
- resm=df_clubs.loc[df_clubs['code']==home].copy()
- resm=resm['crest'].values.tolist()
-  
+   
+   
+ secy = st.radio("Seçim yapınız",('Home Team','Away Team'))
+ 
+ 
+ if secy=='Home Team':
+  resm=df_clubs.loc[df_clubs['code']==home].copy()
+  resm=resm['crest'].values.tolist()
+  st.image (resm[0],width=40) 
+  no=container_final_home['Top_Puan'].max()
+  shining_home= container_final_home.loc[container_final_home['Top_Puan']==no].copy()  
+
+ if secy=='Away Team':
+  resm=df_clubs.loc[df_clubs['code']==away].copy()
+  resm=resm['crest'].values.tolist()
+  st.image (resm[0],width=40) 
+  no=container_final_away['Top_Puan'].max()
+  shining_home= container_final_away.loc[container_final_away['Top_Puan']==no].copy()  
+
+   
  st.header ('Productive 5') 
- st.image (resm[0],width=40)
- no=container_final_home['Top_Puan'].max()
- shining_home= container_final_home.loc[container_final_home['Top_Puan']==no].copy()  
+ 
+ 
  shining_home=shining_home.tail(5) 
  
  foto=shining_home['imageUrls.headshot'].values.tolist()
@@ -1052,78 +1068,6 @@ try:
  st.dataframe(shining_home)
  
  
- resm=df_clubs.loc[df_clubs['code']==away].copy()
- resm=resm['crest'].values.tolist()
- 
- st.image (resm[0],width=40)
- no=container_final_away['Top_Puan'].max()
- shining_away= container_final_away.loc[container_final_away['Top_Puan']==no].copy()  
- shining_away=shining_away.tail(5)
- 
- 
- foto=shining_away['imageUrls.headshot'].values.tolist()
- namo=shining_away['jerseyName'].values.tolist()
- pos=shining_away['positionName'].values.tolist()
- markero=shining_away['markerTime'].max()
- shining_away['Ceyrek']=shining_away['Ceyrek'].replace(to_replace='q1',value='first quarter')
- shining_away['Ceyrek']=shining_away['Ceyrek'].replace(to_replace='q2',value='second quarter')
- shining_away['Ceyrek']=shining_away['Ceyrek'].replace(to_replace='q3',value='third quarter')
- shining_away['Ceyrek']=shining_away['Ceyrek'].replace(to_replace='q4',value='fourth quarter')
- shining_away['Ceyrek']=shining_away['Ceyrek'].replace(to_replace='ot',value='over time')
- bas= shining_away['Score1'].values.tolist()
- son= shining_away['Score2'].values.tolist()
- q=shining_away['Ceyrek'].values.tolist()
- secondo=shining_away['Sure'].max()
- shining_away['Score+']=shining_away['Score+'].astype(int)
- scorly=shining_away['Score+'].sum() 
- shining_away['Score+']=shining_away['Score+'].astype(str)
- score_oponent=scoro=shining_away['Score-'].max()
- tot=shining_away['Top_Puan'].max()
- 
- quq= q[0].replace('q1','first quarter')
- quq= q[0].replace('q2','second quarter')
- quq= q[0].replace('q3','third quarter')
- quq= q[0].replace('q4','fourth quarter')
- quq= q[0].replace('ot','over time')
- 
- 'Starting from ' + str(markero) + ' with the result: ' +str(bas[0]) +' during ' + str(q[0]) + ', they stayed on the court ' + str(round(secondo/60,1)) + ' minutes, scored '+ str(scorly) + ' points and let oppenent score '+ str(score_oponent) + ' points; \
- finally produced ' + str(tot) + ' contribution points ending their time with the result: ' +son[0]
- 
- 
- sutun10,sutun20,sutun30,sutun40,sutun50 = st.columns (5)
- 
- with sutun10:
-   try:
-    st.image(foto[0],caption=namo[0]+', '+pos[0] ,width=140)
-   except:
-    pass
- with sutun20:
-  try:
-   st.image(foto[1],caption=namo[1]+', '+pos[1],width=140)
-  except: 
-   pass 
- with sutun30:
-  try:
-   st.image(foto[2],caption=namo[2]+', '+pos[2],width=140)
-  except:
-   pass  
- with sutun40:
-  try:
-   st.image(foto[3],caption=namo[3]+', '+pos[3],width=140)
-  except:
-   pass
- with sutun50:
-  try:
-   st.image(foto[4],caption=namo[4]+', '+pos[4],width=140)
-  except:
-   pass
- 
- shining_away= shining_away[['jerseyName','Score+','Assist','Rebaund','Blok','Steal','TurnOver']]
- shining_away.columns=['Player Name','Score','Assist','Rebaund','Block','Steal','Turnover']
- shining_away=shining_away.reset_index(drop=True)
- st.dataframe(shining_away)  
- 
-
 	
 except:
  'Please check your connection and refresh the link.'	
@@ -1147,12 +1091,6 @@ src="https://c.statcounter.com/12825092/0/190e10f1/1/"
 alt="web counter"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
-
-
 """
 #st.markdown(takip, unsafe_allow_html=True)  
 components.html(takip,width=200, height=200)   
-   
-   
-   
-   
