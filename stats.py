@@ -34,7 +34,7 @@ try:
  df_clubs=pd.json_normalize(kk)
  try:
   euro_img='https://media-cdn.incrowdsports.com/23610a1b-1c2e-4d2a-8fe4-ac2f8e400632.svg'
-  st.image(euro_img,width=90)
+  st.image(euro_img,width=120)
   
   #kol1,kol2,kol3,kol4,kol5,kol6,kol7,kol8,kol9 = st.columns(9)
   
