@@ -983,7 +983,7 @@ try:
    
    
    
- secy = st.radio("Seçim yapınız",('Home Team','Away Team'))
+ secy = st.radio("Choose :",('Home Team','Away Team'))
  
  
  if secy=='Home Team':
