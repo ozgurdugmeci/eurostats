@@ -123,7 +123,7 @@ try:
  df_sezon= pd.json_normalize(site_json['props']['pageProps']['seasons'])
  
  box2=df_sezon['text'].values.tolist()
- 
+ box2
  #with col1:
  # option2 = st.selectbox(
  #    'Select the season',
