@@ -102,7 +102,7 @@ try:
  #fikstür bilgisini al
  
  
- linko_sezon= 'https://www.euroleaguebasketball.net'+ df_parca + '?season=2022-23'	
+ linko_sezon= 'https://www.euroleaguebasketball.net'+ df_parca + '?season=2023-24'	
  
  
  page = requests.get(linko_sezon)
@@ -123,7 +123,7 @@ try:
  df_sezon= pd.json_normalize(site_json['props']['pageProps']['seasons'])
  
  box2=df_sezon['text'].values.tolist()
- box2
+ 
  #with col1:
  # option2 = st.selectbox(
  #    'Select the season',
