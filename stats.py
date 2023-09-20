@@ -302,8 +302,9 @@ try:
    df_dummy['ceyrek'] = 'q4'
   elif i == 'ot':
    df_dummy['ceyrek'] = 'ot'
-  df_all_plays= df_all_plays.append(df_dummy)
-  
+  #df_all_plays= df_all_plays.append(df_dummy)
+  df_all_plays = pd.concat([df_all_plays, df_dummy])  
+
  #df_all_plays.loc[(df_all_plays['playerCode']=='P011212'), 'playerDorsal'] = '789'
  df_all_plays['playerDorsal']=df_all_plays['playerDorsal'].replace(to_replace='00',value='789')
  
@@ -532,9 +533,10 @@ try:
  
  
  
- container_home=container_home.append(df_home_ilk5)
- container_away=container_away.append(df_away_ilk5)
- 
+ #container_home=container_home.append(df_home_ilk5)
+ #container_away=container_away.append(df_away_ilk5)
+ container_home = pd.concat([container_home, df_home_ilk5])  
+ container_away = pd.concat([container_away, df_away_ilk5]) 
  
  #df_home, df_home_ilk5 sütunlarını stats'lere göre ayarla
  
@@ -552,7 +554,8 @@ try:
     
     top_puan_home=0
     df_ekle= df_home.loc[df_home['playerDorsal']==slice[7]].copy()
-    df_home_ilk5= df_home_ilk5.append(df_ekle)
+    #df_home_ilk5= df_home_ilk5.append(df_ekle)
+    df_home_ilk5 = pd.concat([df_home_ilk5, df_ekle])
     if len(df_home_ilk5)==5:
      sub_home=sub_home+1
      df_home_ilk5['Sub_No']=sub_home
@@ -562,7 +565,8 @@ try:
      key=df_home_ilk5['playerDorsal'].values.tolist()
      key= ''.join(key)
      df_home_ilk5['key']=key
-     container_home=container_home.append(df_home_ilk5)
+     #container_home=container_home.append(df_home_ilk5)
+     container_home = pd.concat([container_home, df_home_ilk5])
      #st.dataframe(df_home_ilk5)
      #str(sub_home) + ' '+ home+ ' ' +str(slice[6]) + ' in'
  	
@@ -570,7 +574,8 @@ try:
     
     top_puan_away=0
     df_ekle= df_away.loc[df_away['playerDorsal']==slice[7]].copy()
-    df_away_ilk5= df_away_ilk5.append(df_ekle)
+    #df_away_ilk5= df_away_ilk5.append(df_ekle)
+    df_away_ilk5 = pd.concat([df_away_ilk5, df_ekle])
     if len(df_away_ilk5)==5:
      sub_away=sub_away+1
      df_away_ilk5['Sub_No']=sub_away	
@@ -580,7 +585,8 @@ try:
      key=df_away_ilk5['playerDorsal'].values.tolist()
      key=''.join(key)
      df_away_ilk5['key']=key
-     container_away=container_away.append(df_away_ilk5)
+     #container_away=container_away.append(df_away_ilk5)
+     container_away = pd.concat([container_away, df_away_ilk5])
      #st.dataframe(df_away_ilk5)
      #str(sub_away) + ' ' + away + ' ' + str(slice[6]) + ' in' 
  	
@@ -598,7 +604,8 @@ try:
      key=df_home_ilk5['playerDorsal'].values.tolist()
      key= ''.join(key)
      df_home_ilk5['key']=key
-     container_home=container_home.append(df_home_ilk5)
+     #container_home=container_home.append(df_home_ilk5)
+     container_home = pd.concat([container_home, df_home_ilk5])
      #st.dataframe(df_home_ilk5)
      #str(sub_home) + ' '+ home+ ' ' +str(slice[6]) + ' out'
  	
@@ -615,7 +622,8 @@ try:
      key=df_away_ilk5['playerDorsal'].values.tolist()
      key=''.join(key)
      df_away_ilk5['key']=key
-     container_away=container_away.append(df_away_ilk5)
+     #container_away=container_away.append(df_away_ilk5)
+     container_away = pd.concat([container_away, df_away_ilk5])
      #st.dataframe(df_away_ilk5)
      #str(sub_away) + ' ' + away + ' ' + str(slice[6]) + ' out'
  
@@ -876,7 +884,8 @@ try:
      
      #st.dataframe(df_home_ilk5)
      sub_counter_home=sub_counter_home+1
-     container_final_home=container_final_home.append(df_home_ilk5)
+     #container_final_home=container_final_home.append(df_home_ilk5)
+     container_final_home = pd.concat([container_final_home, df_home_ilk5])
      df_home_ilk5= container_home.loc[container_home['Sub_No']== sub_counter_home].copy()
      df_home_ilk5['markerTime']= slice[9]
      df_home_ilk5['Ceyrek']= slice[16]
@@ -899,7 +908,8 @@ try:
      df_away_ilk5['Top_Puan']= df_away_ilk5['Top_Puan']- df_away_ilk5['Score-']
      #st.dataframe(df_away_ilk5)
      sub_counter_away=sub_counter_away+1
-     container_final_away=container_final_away.append(df_away_ilk5)
+     #container_final_away=container_final_away.append(df_away_ilk5)
+     container_final_away = pd.concat([container_final_away, df_away_ilk5])
      df_away_ilk5= container_away.loc[container_away['Sub_No']== sub_counter_away].copy()
      df_away_ilk5['markerTime']= slice[9]
      df_away_ilk5['Ceyrek']= slice[16]
@@ -925,7 +935,9 @@ try:
      
      #st.dataframe(df_home_ilk5)
      sub_counter_home=sub_counter_home+1
-     container_final_home=container_final_home.append(df_home_ilk5)
+     #container_final_home=container_final_home.append(df_home_ilk5)
+     container_final_home = pd.concat([container_final_home, df_home_ilk5])
+	 
      df_home_ilk5= container_home.loc[container_home['Sub_No']== sub_counter_home].copy()
      df_home_ilk5['markerTime']= slice[9]
      df_home_ilk5['Ceyrek']= slice[16]
@@ -949,7 +961,8 @@ try:
      df_away_ilk5['Top_Puan']= df_away_ilk5['Top_Puan']- df_away_ilk5['Score-']
      #st.dataframe(df_away_ilk5)
      sub_counter_away=sub_counter_away+1
-     container_final_away=container_final_away.append(df_away_ilk5)
+     #container_final_away=container_final_away.append(df_away_ilk5)
+     container_final_away = pd.concat([container_final_away, df_away_ilk5])
      df_away_ilk5= container_away.loc[container_away['Sub_No']== sub_counter_away].copy()
      df_away_ilk5['markerTime']= slice[9]
      df_away_ilk5['Ceyrek']= slice[16]
@@ -968,7 +981,8 @@ try:
     df_home_ilk5['Dif2']=score_home-score_away
     df_home_ilk5['Score2'] = str(score_home)+ '-' + str(score_away)
     df_home_ilk5['Top_Puan']= df_home_ilk5['Top_Puan']- df_home_ilk5['Score-']
-    container_final_home=container_final_home.append(df_home_ilk5)  
+    #container_final_home=container_final_home.append(df_home_ilk5)  
+    container_final_home = pd.concat([container_final_home, df_home_ilk5])
     #st.dataframe(df_home_ilk5)
    
     #sub_counter_away
@@ -978,7 +992,8 @@ try:
     df_away_ilk5['Dif2']=score_away-score_home
     df_away_ilk5['Score2'] = str(score_home)+ '-' + str(score_away)
     df_away_ilk5['Top_Puan']= df_away_ilk5['Top_Puan']- df_away_ilk5['Score-']
-    container_final_away=container_final_away.append(df_away_ilk5)  
+    #container_final_away=container_final_away.append(df_away_ilk5)
+    container_final_away = pd.concat([container_final_away, df_away_ilk5]) 	
     #st.dataframe(df_away_ilk5)
    
    
