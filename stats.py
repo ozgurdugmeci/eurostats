@@ -160,7 +160,7 @@ box3= df_results['yeni'].values.tolist()
 with col1:
  option3 = st.selectbox(
     'Select the game',
-    (box3), key='3', index=None)
+    (box3), key='3')
 
 	
 if option3 != None:	
