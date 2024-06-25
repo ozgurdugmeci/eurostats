@@ -88,7 +88,7 @@ col1,col2 = st.columns([2.5,1])
 with col1:
  option = st.selectbox(
     'Select the team',
-    (box1), key='1')
+    (box1), keyo='1')
 
 
 df_parca= df_clubs.loc[df_clubs['name']==option].copy()
@@ -156,11 +156,11 @@ df_results['yeni'] = df_results['home.abbreviatedName'] + ' '+  df_results['home
 #df_results.loc[(df_results['home.name']!= option),'yeni2'] = 'at-> ' + df_results['home.name'] + ' ' +df_results['yeni']
 #df_results['yeni'] = df_results['yeni2']+ ' ' +df_results['away.score']
 box3= df_results['yeni'].values.tolist()
-
+box3
 with col1:
  option3 = st.selectbox(
     'Select the game',
-    (box3), key='3', index=None)
+    (box3), keyo='3', index=None)
 
 	
 if option3 != None:	
