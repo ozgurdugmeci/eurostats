@@ -158,7 +158,7 @@ df_results['yeni'] = df_results['home.abbreviatedName'] + ' '+  df_results['home
 box3= df_results['yeni'].values.tolist()
 
 with col1:
- option3 = st.selectbox('Select the game', box3, key='3', index=None)
+ option3 = st.selectbox ('Select the game', box3, key='3', index=4)
 
 	
 if option3 != None:	
