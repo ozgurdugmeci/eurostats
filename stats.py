@@ -160,7 +160,7 @@ box3
 with col1:
  option3 = st.selectbox(
     'Select the game',
-    (box3), keyo='3', index=None)
+    (box3), key='3', index=None)
 
 	
 if option3 != None:	
