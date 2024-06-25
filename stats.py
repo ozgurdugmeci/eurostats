@@ -8,7 +8,7 @@ import json
 
 
 #------------------------------------------------
-try: 
+#try: 
 counter=0
 linko='https://www.euroleaguebasketball.net//euroleague/teams//'
 #1
