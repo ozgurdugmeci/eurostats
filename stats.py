@@ -117,8 +117,8 @@ for i in kk:
 
 site_json=json.loads(soup.string)
 
-#dict_keyos(['hero', 'results', 'seasons', 'clubCode', 'clubName', 'club'])
-#dict_keyos(['featuredGame', 'results', 'upcomingGames'])
+#dict_keys(['hero', 'results', 'seasons', 'clubCode', 'clubName', 'club'])
+#dict_keys(['featuredGame', 'results', 'upcomingGames'])
 
 df_sezon= pd.json_normalize(site_json['props']['pageProps']['seasons'])
 
@@ -127,7 +127,7 @@ box2=df_sezon['text'].values.tolist()
 #with col1:
 # option2 = st.selectbox(
 #    'Select the season',
-#    (box2), keyo='2')'''
+#    (box2), key='2')'''
 
 
 linko_results= 'https://www.euroleaguebasketball.net'+ df_parca + '?season='+ str(box2[0])	
@@ -156,7 +156,7 @@ df_results['yeni'] = df_results['home.abbreviatedName'] + ' '+  df_results['home
 #df_results.loc[(df_results['home.name']!= option),'yeni2'] = 'at-> ' + df_results['home.name'] + ' ' +df_results['yeni']
 #df_results['yeni'] = df_results['yeni2']+ ' ' +df_results['away.score']
 box3= df_results['yeni'].values.tolist()
-box3
+
 with col1:
  option3 = st.selectbox(
     'Select the game',
@@ -250,9 +250,9 @@ if option3 != None:
  
  
  
- keyo=df_home_ilk5['playerDorsal'].values.tolist()
- keyo= ''.join(keyo)
- df_home_ilk5['keyo']=keyo
+ key=df_home_ilk5['playerDorsal'].values.tolist()
+ key= ''.join(key)
+ df_home_ilk5['key']=key
  #home
  #st.dataframe(df_home_ilk5)
  
@@ -262,9 +262,9 @@ if option3 != None:
  df_away_ilk5=df_away_ilk5.sort_values(by=['playerDorsal'])
  df_away_ilk5['playerDorsal']= df_away_ilk5['playerDorsal'].astype(str)
  
- keyo=df_away_ilk5['playerDorsal'].values.tolist()
- keyo=''.join(keyo)
- df_away_ilk5['keyo']=keyo
+ key=df_away_ilk5['playerDorsal'].values.tolist()
+ key=''.join(key)
+ df_away_ilk5['key']=key
  #away
  #st.dataframe(df_away_ilk5)
  
@@ -564,9 +564,9 @@ if option3 != None:
      df_home_ilk5['playerDorsal']= df_home_ilk5['playerDorsal'].astype(int)
      df_home_ilk5=df_home_ilk5.sort_values(by=['playerDorsal'])
      df_home_ilk5['playerDorsal']= df_home_ilk5['playerDorsal'].astype(str)
-     keyo=df_home_ilk5['playerDorsal'].values.tolist()
-     keyo= ''.join(keyo)
-     df_home_ilk5['keyo']=keyo
+     key=df_home_ilk5['playerDorsal'].values.tolist()
+     key= ''.join(key)
+     df_home_ilk5['key']=key
      #container_home=container_home.append(df_home_ilk5)
      container_home = pd.concat([container_home, df_home_ilk5])
      #st.dataframe(df_home_ilk5)
@@ -584,9 +584,9 @@ if option3 != None:
      df_away_ilk5['playerDorsal']= df_away_ilk5['playerDorsal'].astype(int)
      df_away_ilk5=df_away_ilk5.sort_values(by=['playerDorsal'])
      df_away_ilk5['playerDorsal']= df_away_ilk5['playerDorsal'].astype(str)
-     keyo=df_away_ilk5['playerDorsal'].values.tolist()
-     keyo=''.join(keyo)
-     df_away_ilk5['keyo']=keyo
+     key=df_away_ilk5['playerDorsal'].values.tolist()
+     key=''.join(key)
+     df_away_ilk5['key']=key
      #container_away=container_away.append(df_away_ilk5)
      container_away = pd.concat([container_away, df_away_ilk5])
      #st.dataframe(df_away_ilk5)
@@ -603,9 +603,9 @@ if option3 != None:
      df_home_ilk5['playerDorsal']= df_home_ilk5['playerDorsal'].astype(int)
      df_home_ilk5=df_home_ilk5.sort_values(by=['playerDorsal'])
      df_home_ilk5['playerDorsal']= df_home_ilk5['playerDorsal'].astype(str)
-     keyo=df_home_ilk5['playerDorsal'].values.tolist()
-     keyo= ''.join(keyo)
-     df_home_ilk5['keyo']=keyo
+     key=df_home_ilk5['playerDorsal'].values.tolist()
+     key= ''.join(key)
+     df_home_ilk5['key']=key
      #container_home=container_home.append(df_home_ilk5)
      container_home = pd.concat([container_home, df_home_ilk5])
      #st.dataframe(df_home_ilk5)
@@ -621,9 +621,9 @@ if option3 != None:
      df_away_ilk5['playerDorsal']= df_away_ilk5['playerDorsal'].astype(int)
      df_away_ilk5=df_away_ilk5.sort_values(by=['playerDorsal'])
      df_away_ilk5['playerDorsal']= df_away_ilk5['playerDorsal'].astype(str)
-     keyo=df_away_ilk5['playerDorsal'].values.tolist()
-     keyo=''.join(keyo)
-     df_away_ilk5['keyo']=keyo
+     key=df_away_ilk5['playerDorsal'].values.tolist()
+     key=''.join(key)
+     df_away_ilk5['key']=key
      #container_away=container_away.append(df_away_ilk5)
      container_away = pd.concat([container_away, df_away_ilk5])
      #st.dataframe(df_away_ilk5)
