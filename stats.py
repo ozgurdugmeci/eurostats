@@ -88,7 +88,7 @@ col1,col2 = st.columns([2.5,1])
 with col1:
  option = st.selectbox(
     'Select the team',
-    (box1), keyo='1')
+    (box1), key='1')
 
 
 df_parca= df_clubs.loc[df_clubs['name']==option].copy()
